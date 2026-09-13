@@ -6,6 +6,7 @@
   --pink-soft: #f7dce8;
   --pink-pale: #fff0f5;
   --taupe: #9a8b80;
+  --taupe-dark: #7f7166;
   --ink: #3e3036;
   --muted: #6f6267;
   --line: #ead6de;
@@ -256,7 +257,7 @@ footer {
   align-items: center;
   justify-content: center;
   margin: 0 auto 2rem;
-  color: var(--pink);
+  color: var(--pink-dark);
   font-size: clamp(5.4rem, 12.6vw, 11rem);
   line-height: 0.64;
   text-shadow: 0 4px 0 var(--white);
@@ -299,7 +300,7 @@ footer {
 }
 
 .button-primary {
-  background: var(--taupe);
+  background: var(--taupe-dark);
   box-shadow: 0 7px 0 #756960;
   color: var(--white);
 }
@@ -793,8 +794,16 @@ footer {
   box-shadow: var(--shadow-small);
 }
 
-.skill-group:nth-child(4),
-.skill-group:nth-child(5) {
+/*
+ * Balance a dangling final row of 2 items (in this 3-per-row, span-4 grid)
+ * without hardcoding a total item count. This selects the first item of the
+ * last row when exactly 2 items remain (nth-child(3n+1) finds row-starts,
+ * nth-last-child(2) finds "second from the end"), then the sibling
+ * combinator picks up the item(s) after it. Works for any total count that
+ * leaves a remainder of 2 when divided by 3 (5, 8, 11, ...), not just 5.
+ */
+.skill-group:nth-child(3n+1):nth-last-child(2),
+.skill-group:nth-child(3n+1):nth-last-child(2) ~ .skill-group {
   grid-column: span 6;
 }
 
@@ -854,7 +863,7 @@ footer {
   position: relative;
   z-index: 1;
   margin-bottom: 1.5rem;
-  color: var(--white);
+  color: var(--ink);
   font-size: clamp(4.5rem, 10vw, 8rem);
 }
 
@@ -958,9 +967,7 @@ footer {
     margin-top: 0;
   }
 
-  .skill-group,
-  .skill-group:nth-child(4),
-  .skill-group:nth-child(5) {
+  .skill-group {
     grid-column: span 6;
   }
 }
@@ -1118,9 +1125,7 @@ footer {
     text-align: left;
   }
 
-  .skill-group,
-  .skill-group:nth-child(4),
-  .skill-group:nth-child(5) {
+  .skill-group {
     grid-column: 1 / -1;
   }
 
