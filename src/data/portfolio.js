@@ -5,13 +5,21 @@ export const profile = {
   email: 'yongthulaw@cpp.edu',
   github: 'https://github.com/yxngles13',
   linkedin: 'https://www.linkedin.com/in/yong-thu-la-wong',
-  resume: '/Yong-Thu-La-Wong-Resume.pdf',
+  resume: '/Yong_Thu_La_Wong_Software_Engineering_Intern_Resume__Summer_2027_.pdf',
   introduction: 'Computer science student and software engineer building thoughtful full-stack and machine learning experiences.',
   biography: [
     'I’m a computer science student at Cal Poly Pomona, minoring in artificial intelligence and graduating in December 2027.',
     'I enjoy turning complex ideas into approachable products across full-stack engineering, data, and machine learning.',
   ],
 }
+
+export const photos = [
+  { src: '/images/IMG_0466.JPG', alt: 'Photo of Yong, 1 of 5', caption: 'Caption coming soon' },
+  { src: '/images/IMG_1351.JPG', alt: 'Photo of Yong, 2 of 5', caption: 'Caption coming soon' },
+  { src: '/images/IMG_1434.JPG', alt: 'Photo of Yong, 3 of 5', caption: 'Caption coming soon' },
+  { src: '/images/IMG_4402.JPG', alt: 'Photo of Yong, 4 of 5', caption: 'Caption coming soon' },
+  { src: '/images/IMG_4544.JPG', alt: 'Photo of Yong, 5 of 5', caption: 'Caption coming soon' },
+]
 
 export const navigation = [
   { label: 'my work', href: '#work' },

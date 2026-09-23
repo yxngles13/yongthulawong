@@ -5,16 +5,16 @@ import Hero from './components/Hero'
 import Navigation from './components/Navigation'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import { experiences, navigation, profile, projects, skillGroups } from './data/portfolio'
+import { experiences, navigation, photos, profile, projects, skillGroups } from './data/portfolio'
 
 export default function App() {
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <Navigation items={navigation} />
+      <Navigation items={navigation} resumeHref={profile.resume} />
       <Hero profile={profile} />
       <main id="main-content">
-        <About profile={profile} />
+        <About profile={profile} photos={photos} />
         <Projects projects={projects} />
         <Experience experiences={experiences} />
         <Skills groups={skillGroups} />

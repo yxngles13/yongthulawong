@@ -7,7 +7,7 @@ describe('portfolio data', () => {
     expect(profile.email).toBe('yongthulaw@cpp.edu')
     expect(profile.github).toMatch(/^https:\/\/github\.com\//)
     expect(profile.linkedin).toMatch(/^https:\/\/www\.linkedin\.com\//)
-    expect(profile.resume).toBe('/Yong-Thu-La-Wong-Resume.pdf')
+    expect(profile.resume).toBe('/Yong_Thu_La_Wong_Software_Engineering_Intern_Resume__Summer_2027_.pdf')
   })
 
   it('provides a navigation target for every major section', () => {

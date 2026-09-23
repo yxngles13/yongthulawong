@@ -11,6 +11,7 @@ export default function Hero({ profile }) {
         <p className="hero-intro">{profile.introduction}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#about">Start Here</a>
+          <a className="button button-secondary" href={profile.resume} download>Download Résumé ↓</a>
           <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>

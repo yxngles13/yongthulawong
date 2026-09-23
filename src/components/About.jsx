@@ -1,15 +1,13 @@
-export default function About({ profile }) {
+import PhotoCarousel from './PhotoCarousel'
+
+export default function About({ profile, photos }) {
   return (
     <section className="section about" id="about" aria-labelledby="about-heading">
       <div className="section-label">01 · a little intro</div>
       <div className="about-grid">
-        <div className="photo-collage" aria-hidden="true">
-          <div className="photo-frame photo-frame-main">
-            <span>Y</span>
-            <small>photo coming soon</small>
-          </div>
-          <div className="photo-frame photo-frame-small"><span>✿</span></div>
-          <div className="photo-tape" />
+        <div className="photo-collage">
+          <PhotoCarousel photos={photos} />
+          <div className="photo-tape" aria-hidden="true" />
         </div>
         <div className="about-copy">
           <h2 id="about-heading">About Me</h2>

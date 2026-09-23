@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Navigation({ items }) {
+export default function Navigation({ items, resumeHref }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -23,6 +23,9 @@ export default function Navigation({ items }) {
               <a href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>
             </li>
           ))}
+          <li>
+            <a className="nav-resume" href={resumeHref} download onClick={() => setIsOpen(false)}>Résumé ↓</a>
+          </li>
         </ul>
       </div>
     </nav>
