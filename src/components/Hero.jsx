@@ -7,7 +7,7 @@ export default function Hero({ profile }) {
       <div className="hero-orbit hero-orbit-two" aria-hidden="true">✿</div>
       <div className="hero-content">
         <p className="eyebrow">hello, i’m {profile.shortName.toLowerCase()}</p>
-        <h1><span>Yong’s</span>{' '}<span>Portfolio</span></h1>
+        <h1><span>Yong’s </span>{'    '}<span>Portfolio</span></h1>
         <p className="hero-intro">{profile.introduction}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#about">Start Here</a>
