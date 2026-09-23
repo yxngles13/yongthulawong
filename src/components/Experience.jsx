@@ -1,7 +1,7 @@
 export default function Experience({ experiences }) {
   return (
     <section className="section experience" id="experience" aria-labelledby="experience-heading">
-      <div className="section-label">03 · where i’ve been</div>
+      <div className="section-label">02 · where i’ve been</div>
       <h2 id="experience-heading">Experiences</h2>
       <div className="experience-list">
         {experiences.map((item, index) => (

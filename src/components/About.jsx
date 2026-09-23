@@ -17,7 +17,7 @@ export default function About({ profile, photos }) {
             <div>
               <strong>Cal Poly Pomona</strong>
               <p>B.S. Computer Science · Minor in Artificial Intelligence</p>
-              <small>GPA 3.67 · Expected December 2027</small>
+              <small>GPA 3.69 · Expected December 2027</small>
             </div>
           </div>
           <p className="location">Based in {profile.location}</p>

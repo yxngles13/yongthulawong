@@ -4,7 +4,7 @@ import { experiences, navigation, profile, projects, skillGroups } from './portf
 describe('portfolio data', () => {
   it('contains Yong’s professional identity and deployable contact links', () => {
     expect(profile.name).toBe('Yong Thu La Wong')
-    expect(profile.email).toBe('yongthulaw@cpp.edu')
+    expect(profile.email).toBe('yongthulawong@gmail.com')
     expect(profile.github).toMatch(/^https:\/\/github\.com\//)
     expect(profile.linkedin).toMatch(/^https:\/\/www\.linkedin\.com\//)
     expect(profile.resume).toBe('/Yong_Thu_La_Wong_Software_Engineering_Intern_Resume__Summer_2027_.pdf')
@@ -18,12 +18,12 @@ describe('portfolio data', () => {
 
   it('includes every résumé experience and featured project', () => {
     expect(experiences.map((item) => item.organization)).toEqual([
-      'California State University, Chancellor’s Office',
+      'California State University, Office of Chancellor',
       'Cadence Design Systems',
-      'Deep-Hipo Research',
+      'California State Polytechnic University, Pomona',
     ])
     expect(projects.map((item) => item.name)).toEqual([
-      'Eye Tracking Analysis', 'Project Sloka', 'BrainHive',
+      'Eye Tracking Analysis', 'Sloka',
     ])
   })
 

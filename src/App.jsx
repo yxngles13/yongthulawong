@@ -15,8 +15,8 @@ export default function App() {
       <Hero profile={profile} />
       <main id="main-content">
         <About profile={profile} photos={photos} />
-        <Projects projects={projects} />
         <Experience experiences={experiences} />
+        <Projects projects={projects} />
         <Skills groups={skillGroups} />
       </main>
       <Contact profile={profile} />

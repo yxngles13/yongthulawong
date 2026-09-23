@@ -3,7 +3,7 @@ export default function Projects({ projects }) {
     <section className="section projects" id="work" aria-labelledby="projects-heading">
       <div className="section-heading-row">
         <div>
-          <div className="section-label">02 · things i’ve made</div>
+          <div className="section-label">03 · things i’ve made</div>
           <h2 id="projects-heading">Selected Work</h2>
         </div>
         <p>Projects at the intersection of full-stack engineering, data, and thoughtful product design.</p>

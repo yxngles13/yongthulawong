@@ -18,10 +18,10 @@ describe('portfolio page', () => {
   it('renders truthful experience and project content', () => {
     render(<App />)
 
-    expect(screen.getByText('California State University, Chancellor’s Office')).toBeInTheDocument()
+    expect(screen.getByText('California State University, Office of Chancellor')).toBeInTheDocument()
     expect(screen.getByText('Cadence Design Systems')).toBeInTheDocument()
     expect(screen.getByText('Eye Tracking Analysis')).toBeInTheDocument()
-    expect(screen.getByText('BrainHive')).toBeInTheDocument()
+    expect(screen.getByText('Sloka')).toBeInTheDocument()
   })
 
   it('provides external profile links and a downloadable résumé', () => {
