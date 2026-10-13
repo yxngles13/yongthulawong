@@ -242,7 +242,6 @@ footer {
   left: 50%;
   width: min(64vw, 860px);
   height: min(64vw, 860px);
-  border: 1px solid rgb(222 126 170 / 18%);
   border-radius: 50%;
   background: radial-gradient(circle, rgb(247 220 232 / 48%) 0, rgb(255 253 242 / 0%) 67%);
   content: "";
@@ -282,7 +281,7 @@ footer {
 
 .hero h1 span:last-child {
   margin-top: 0.7em;
-  margin-left: -0.18em;
+  margin-left: 0.15em;
 }
 
 .hero-intro {
@@ -378,29 +377,6 @@ footer {
 .hero-note strong {
   font-size: 0.85rem;
   line-height: 1.45;
-}
-
-.halftone {
-  position: absolute;
-  z-index: -1;
-  width: 220px;
-  height: 180px;
-  opacity: 0.48;
-  background-image: radial-gradient(circle, var(--pink) 0 1.7px, transparent 2px);
-  background-size: 11px 11px;
-  mask-image: radial-gradient(ellipse at center, #000 0 30%, transparent 72%);
-}
-
-.halftone-top {
-  top: 4.5rem;
-  right: -2rem;
-  transform: rotate(18deg);
-}
-
-.halftone-bottom {
-  bottom: 1rem;
-  left: -2rem;
-  transform: rotate(-20deg);
 }
 
 .hero-orbit {

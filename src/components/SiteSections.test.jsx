@@ -28,7 +28,10 @@ describe('portfolio page', () => {
     render(<App />)
 
     expect(screen.getAllByRole('link', { name: /github/i })[0]).toHaveAttribute('href', 'https://github.com/yxngles13')
-    expect(screen.getAllByRole('link', { name: /linkedin/i })[0]).toHaveAttribute('href', 'https://www.linkedin.com/in/yong-thu-la-wong')
+    expect(screen.getAllByRole('link', { name: /linkedin/i })[0]).toHaveAttribute('href', 'https://www.linkedin.com/in/yongthulawong/')
+    expect(screen.getAllByRole('link', { name: /tiktok/i })[0]).toHaveAttribute('href', 'https://www.tiktok.com/@yxngles_13')
+
+
     const resumeLinks = screen.getAllByRole('link', { name: /résumé/i })
     expect(resumeLinks.length).toBeGreaterThanOrEqual(3)
     resumeLinks.forEach((link) => expect(link).toHaveAttribute('download'))
