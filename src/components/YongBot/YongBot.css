@@ -1,0 +1,230 @@
+
+.yongbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  font-family: inherit;
+}
+
+.yongbot button {
+  cursor: pointer;
+  font: inherit;
+}
+
+.yongbot button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.yongbot-bubble {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background: #f2bfd6;
+  color: #89516c;
+  font-size: 32px;
+  box-shadow: 0 6px 24px #a77c9040;
+  transition: transform 0.2s ease;
+}
+
+.yongbot-bubble:hover {
+  transform: scale(1.08);
+}
+
+.yongbot-panel {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: min(520px, 80dvh);
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    #ffe5f0,
+    #efbad0
+  );
+  box-shadow: 0 8px 32px #a77c9040;
+}
+
+.yongbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid #ffffff80;
+}
+
+.yongbot-header h2 {
+  margin: 0;
+  color: #89516c;
+  font-size: 20px;
+}
+
+.yongbot-header p {
+  margin: 4px 0 0;
+  color: #946d80;
+  font-size: 12px;
+}
+
+.yongbot-header button {
+  border: none;
+  background: transparent;
+  color: #89516c;
+  font-size: 24px;
+}
+
+.yongbot-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.yongbot-message {
+  width: fit-content;
+  max-width: 85%;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.yongbot-message.bot {
+  background: #fffaf7;
+  color: #80566b;
+}
+
+.yongbot-message.user {
+  margin-left: auto;
+  background: #a98b9c;
+  color: white;
+}
+
+.yongbot-suggestions {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  overflow-x: auto;
+}
+
+.yongbot-suggestions button {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #e7b3c9;
+  border-radius: 20px;
+  background: #fffaf7;
+  color: #89516c;
+  font-size: 12px;
+}
+
+.yongbot-input {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+}
+
+.yongbot-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: none;
+  border-radius: 24px;
+  background: #fffaf7;
+  color: #80566b;
+  font: inherit;
+  font-size: 14px;
+}
+
+.yongbot-input button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #fffaf7;
+  color: #89516c;
+  font-size: 20px;
+}
+
+.yongbot-bubble {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f2bfd6;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.yongbot-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.yongbot-bubble:hover {
+  transform: scale(1.08);
+}
+
+.yongbot-bubble-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.yongbot-tooltip{
+    background: #fff9f5;
+    color: #89516c;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px #a77c9030;
+
+    /* Hidden by default */
+    opacity:0;
+    visibility: hidden;
+    transform: translateX(8px);
+
+    /* Appearance */
+    transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  pointer-events: none;
+}
+
+/* Show when hovering over the avatar */
+.yongbot-bubble-wrapper:hover .yongbot-tooltip,
+.yongbot-bubble-wrapper:focus-within .yongbot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .yongbot {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .yongbot-panel {
+    width: min(350px, calc(100vw - 24px));
+    height: min(520px, 80dvh);
+  }
+  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yongbot-tooltip {
+    transition: none;
+  }
+}

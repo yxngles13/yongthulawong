@@ -6,6 +6,7 @@ import Navigation from './components/Navigation'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { experiences, navigation, photos, profile, projects, skillGroups } from './data/portfolio'
+import YongBot from './components/YongBot/YongBot';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Skills groups={skillGroups} />
       </main>
       <Contact profile={profile} />
+      <YongBot />
     </>
   )
 }
