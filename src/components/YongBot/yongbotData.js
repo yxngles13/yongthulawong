@@ -1,25 +1,25 @@
 export const suggestedQuestions = [
-    {
-        id: "projects",
-        label: "✿ What projects has Yong built?",
-        answer: "Yong has worked on several software projects! You can explore them in the Projects section of her portfolio. ♡",
+  {
+    id: "education",
+    label: "🎓 When does she graduate?",
+    answer:
+      "Expected to graduate May 2028! ♡",
+  },
+  {
+    id: "major",
+    label: "✿ What's her major?",
+    answer:
+      "B.S in Computer Science with a minor in Artificial Intelligence at Cal Poly Pomona!",
+  },
+  {
+    id: "skills",
+    label: "⌘ What's her tech stack?",
+    answer: "Languages: Python, JavaScript, TypeScript, PHP, and SQL. Frameworks & tools: React, Next.js, Laravel, PostgreSQL, Supabase, and Hugging Face Transformers!",  
     },
-    {
-        id: "skills",
-        label: "♡ What technologies does she use?",
-        answer:
-        "Yong enjoys building software and exploring AI! Check out her portfolio for her current technical skills.",
-    },
-    {
-        id: "about",
-        label: "✧ Tell me about Yong!",
-        answer:
-        "Yong is a developer who loves creating thoughtful, interactive experiences. This little chatbot is one of them!",
-    },
-    {
-        id: "contact",
-        label: "✉ How can I contact her?",
-        answer:
-        "You can reach Yong through the contact links on her portfolio. She'd love to connect! ♡",
+  {
+    id: "interests",
+    label: "♡ What are her interests?",
+    answer:
+        "Software Engineering and AI/ML! Wants to try out Product Management as well. ♡",
     },
 ];

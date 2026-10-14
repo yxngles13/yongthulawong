@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { suggestedQuestions } from "./yongbotData";
 import "./YongBot.css";
 import yongbotAvatar from "../../assets/logo.jpg";
@@ -22,6 +22,18 @@ export default function YongBot() {
     },
   ]);
 
+    const messagesEndRef = useRef(null);
+
+    useEffect(() => {
+    if (isOpen) {
+        messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        });
+    }
+    }, [messages, loading, isOpen]);
+
+
   // Add a new message to the conversation
   const addMessage = (role, text) => {
     setMessages((prev) => [
@@ -31,11 +43,25 @@ export default function YongBot() {
   };
 
   // Handle suggested questions
-  const handleSuggestion = (question) => {
+  const handleSuggestion = async(question) => {
     if (loading) return;
 
+    // Display the selected question immediately
     addMessage("user", question.label);
+
+    // Show the typing indicator
+    setLoading(true);
+
+    // Wait 1 second
+    await new Promise((resolve) =>
+        setTimeout(resolve, 1000)
+    );
+
+    // Display YongBot's answer
     addMessage("bot", question.answer);
+
+    // Hide the typing indicator
+    setLoading(false);
   };
 
   // Handle custom questions using Grok API
@@ -156,24 +182,24 @@ export default function YongBot() {
             role="log"
             aria-live="polite"
           >
-
             {messages.map((message, index) => (
-              <div
+            <div
                 key={index}
                 className={`yongbot-message ${message.role}`}
-              >
+                >
                 {message.text}
-              </div>
+                </div>
             ))}
 
-            {/* Loading indicator */}
             {loading && (
-              <div className="yongbot-message bot">
-                thinking... ♡
-              </div>
+                <div className="yongbot-message bot">
+                typing... ♡
+                </div>
             )}
 
-          </div>
+            {/* Invisible element at the bottom */}
+            <div ref={messagesEndRef} />
+            </div>
 
           {/* Suggested questions */}
           <div className="yongbot-suggestions">
