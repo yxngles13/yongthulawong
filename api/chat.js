@@ -248,7 +248,7 @@ Only use verified information.
 // GROQ API HANDLER
 // ========================================
 
-
+export default async function handler(req, res) {
 const handleSubmit = async (event) => {
   event.preventDefault();
 
@@ -308,3 +308,4 @@ const handleSubmit = async (event) => {
     setLoading(false);
   }
 };
+}
