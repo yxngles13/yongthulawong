@@ -99,64 +99,45 @@ to Yong's portfolio contact section.
 // GROQ API HANDLER
 // ========================================
 
+const groq = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1",
+});
+
 export default async function handler(req, res) {
-const handleSubmit = async (event) => {
-  event.preventDefault();
+  if (req.method !== "POST") {
+    res.status(405).json({ error: "Method not allowed" });
+    return;
+  }
 
-  const question = input.trim();
-
-  if (!question || loading) return;
-
-  const nextMessages = [
-    ...messages,
-    { role: "user", text: question },
-  ];
-
-  setMessages(nextMessages);
-  setInput("");
-  setLoading(true);
+  const { messages = [] } = req.body || {};
 
   try {
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        messages: nextMessages.slice(-10),
-      }),
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.1-8b-instant",
+      messages: [
+        { role: "system", content: yongbotPrompt },
+        ...messages.map((message) => ({
+          role: message.role === "bot" ? "assistant" : "user",
+          content: message.text,
+        })),
+      ],
     });
 
-    const data = await response.json();
+    const reply = completion.choices[0]?.message?.content?.trim();
 
-    // Groq free-tier limit reached
-    if (response.status === 429) {
-      addMessage(
-        "bot",
-        data.reply ||
-          "i'm taking a little break! try again soon ♡"
-      );
+    res.status(200).json({ reply });
+
+  } catch (error) {
+    console.error("YongBot backend error:", error);
+
+    if (error.status === 429) {
+      res.status(429).json({
+        reply: "i'm taking a little break! try again soon ♡",
+      });
       return;
     }
 
-    // Other API errors
-    if (!response.ok) {
-      throw new Error(data.error || "Request failed");
-    }
-
-    // Successful AI response
-    addMessage("bot", data.reply);
-
-  } catch (error) {
-    console.error("YongBot error:", error);
-
-    addMessage(
-      "bot",
-      "oops! something went wrong! try again later ♡"
-    );
-
-  } finally {
-    setLoading(false);
+    res.status(500).json({ error: "Request failed" });
   }
-};
 }
