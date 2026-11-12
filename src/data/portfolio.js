@@ -74,13 +74,22 @@ export const projects = [
     dates: 'Aug. 2026 – Present',
     summary: 'A general-purpose, web-based eye-tracking platform that captures gaze coordinates and scrolling behavior, batches interaction data into MySQL via Laravel, and processes it with DBSCAN clustering and fixation aggregation to generate usability heatmaps.',
     technologies: ['WebGazer.js', 'Laravel', 'PHP', 'MySQL', 'Python'],
+    art: { style: 'placeholder' },
   },
   {
     name: 'Sloka',
     dates: 'May 2025 – Dec. 2025',
     summary: 'A full-stack platform with secure authentication, RESTful APIs, real-time features, and role-based access control (RBAC), built with React and TypeScript on the frontend and PostgreSQL and Google Cloud Platform on the backend.',
     technologies: ['React', 'TypeScript', 'PostgreSQL', 'Google Cloud Platform'],
+    art: { style: 'placeholder' },
   },
+  // Add demo: '/videos/my-project.mp4' (file in public/videos) to any project to play it in the full-size viewer.
+  // Placeholders — swap in real projects. Art styles: placeholder, heatmap, type, waves, scribble, stamp, bubble,
+  // or set art.image to a path in /public (e.g. '/images/my-project.png') to use your own graphic.
+  { name: 'Project 03', placeholder: true, dates: 'Coming soon', summary: 'Details coming soon.', technologies: [], art: { style: 'placeholder' } },
+  { name: 'Project 04', placeholder: true, dates: 'Coming soon', summary: 'Details coming soon.', technologies: [], art: { style: 'placeholder' } },
+  { name: 'Project 05', placeholder: true, dates: 'Coming soon', summary: 'Details coming soon.', technologies: [], art: { style: 'placeholder' } },
+  { name: 'Project 06', placeholder: true, dates: 'Coming soon', summary: 'Details coming soon.', technologies: [], art: { style: 'placeholder' } },
 ]
 
 export const skillGroups = [

@@ -22,7 +22,7 @@ describe('portfolio data', () => {
       'Cadence Design Systems',
       'California State Polytechnic University, Pomona',
     ])
-    expect(projects.map((item) => item.name)).toEqual([
+    expect(projects.filter((item) => !item.placeholder).map((item) => item.name)).toEqual([
       'Eye Tracking Analysis', 'Sloka',
     ])
   })
