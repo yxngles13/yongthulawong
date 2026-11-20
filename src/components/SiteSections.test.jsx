@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import App from '../App'
@@ -7,7 +7,7 @@ describe('portfolio page', () => {
   it('renders the core story and all major sections', () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { level: 1, name: /yong’s portfolio/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: /yong thu la wong/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /experiences/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /selected work/i })).toBeInTheDocument()
@@ -18,10 +18,31 @@ describe('portfolio page', () => {
   it('renders truthful experience and project content', () => {
     render(<App />)
 
-    expect(screen.getByText('California State University, Office of Chancellor')).toBeInTheDocument()
-    expect(screen.getByText('Cadence Design Systems')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /software engineering intern at california state university/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /machine learning engineer intern at cadence design systems/i })).toBeInTheDocument()
     expect(screen.getByText('Eye Tracking Analysis')).toBeInTheDocument()
     expect(screen.getByText('Sloka')).toBeInTheDocument()
+  })
+
+  it('opens an experience card from its folder', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('button', { name: /machine learning engineer intern at cadence/i }))
+    const card = screen.getByRole('dialog', { name: /machine learning engineer intern/i })
+    expect(card).toHaveTextContent('87% accuracy')
+
+    await user.click(screen.getByRole('button', { name: /close experience/i }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('asks YongBot a suggested question from the landing page', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<App />)
+    const landing = within(container.querySelector('#home'))
+
+    await user.click(landing.getByRole('button', { name: /what's her major/i }))
+    expect(await landing.findByText(/computer science with a minor/i, {}, { timeout: 2000 })).toBeInTheDocument()
   })
 
   it('provides external profile links and a downloadable résumé', () => {

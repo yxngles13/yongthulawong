@@ -7,14 +7,24 @@
   font-family: inherit;
 }
 
-.yongbot button {
+.yongbot button,
+.yongbot-thread button {
   cursor: pointer;
   font: inherit;
 }
 
-.yongbot button:disabled {
+.yongbot button:disabled,
+.yongbot-thread button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* messages + suggestions + input, shared by the corner panel and the landing page */
+.yongbot-thread {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
 }
 
 .yongbot-bubble {
@@ -208,6 +218,64 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+}
+
+/* landing-page chat: wide and centered, input first with the suggestions under it */
+.yongbot-thread-landing {
+  flex: 0 1 auto;
+}
+
+.yongbot-thread-landing.has-started {
+  flex: 1;
+}
+
+.yongbot-thread-landing .yongbot-messages {
+  flex: 1;
+  padding: 0 0 1rem;
+}
+
+.yongbot-thread-landing .yongbot-message {
+  font-size: 15px;
+}
+
+.yongbot-thread-landing .yongbot-message.bot {
+  background: #fff0f5;
+}
+
+.yongbot-thread-landing .yongbot-input {
+  order: 1;
+  padding: 8px 8px 8px 20px;
+  border: 1px solid #ead6de;
+  border-radius: 32px;
+  background: #fffefd;
+  box-shadow: 0 10px 30px #67425217;
+}
+
+.yongbot-thread-landing .yongbot-input:focus-within {
+  border-color: #de7eaa;
+}
+
+.yongbot-thread-landing .yongbot-input input {
+  padding: 12px 0;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+.yongbot-thread-landing .yongbot-input button {
+  width: 46px;
+  height: 46px;
+  background: #de7eaa;
+  color: #fffefd;
+}
+
+.yongbot-thread-landing .yongbot-suggestions {
+  order: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0 0;
+  overflow: visible;
 }
 
 @media (max-width: 600px) {

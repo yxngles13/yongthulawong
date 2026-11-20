@@ -28,42 +28,89 @@ export const navigation = [
   { label: 'contact', href: '#contact' },
 ]
 
+// Each experience is a folder. folder.color picks the palette (pink, sage, peach, butter); folder.peek is
+// what sticks out of it — a sheet of paper (doc), a tech tag (tag), or a sticky note (note).
 export const experiences = [
   {
-    organization: 'California State University, Office of Chancellor',
+    organization: 'California State University, Office of the Chancellor',
     role: 'Software Engineering Intern',
     dates: 'June 2026 – Present',
     location: 'Remote',
-    summary: 'Leading end-to-end development of centralized administrative systems used across more than 20 CSU campuses.',
+    folder: {
+      label: 'CSU Chancellor',
+      color: 'pink',
+      peek: [
+        { type: 'doc', text: 'dashboard.php' },
+        { type: 'tag', text: 'Laravel' },
+        { type: 'note', text: '20+ campuses' },
+      ],
+    },
+    technologies: ['PHP', 'Laravel', 'MySQL', 'REST APIs', 'Eloquent ORM', 'Bitbucket', 'CI/CD'],
     highlights: [
-      'Led the end-to-end development of 3 administrative systems—Admin Page, System Inbox, and User Usage—supporting centralized workflows across 20+ CSU campuses.',
-      'Delivered 15+ frontend and backend features within an Agile Scrum team using PHP, Laravel, JavaScript, jQuery, MySQL, and AWS RDS.',
-      'Designed RESTful APIs and database-backed workflows using Laravel MVC and Eloquent ORM, enabling administrators to manage users, messages, and platform activity.',
-      'Diagnosed and resolved 30+ frontend, backend, and database issues, improving platform reliability and supporting production deployments.',
+      'Develop and maintain production applications using PHP, Laravel, MySQL, and RESTful APIs for a CSU dashboard serving 20+ campuses.',
+      'Engineered 3 administrative tools, including an asynchronous messaging system using Laravel queued jobs to support broadcasts to 1,000+ users.',
+      'Troubleshoot and resolve issues across application layers while designing backend APIs and database workflows with Laravel MVC and Eloquent ORM.',
+      'Contribute code via Bitbucket, where the team’s CI/CD pipelines build and deploy changes.',
+    ],
+  },
+  {
+    organization: 'California State Polytechnic University, Pomona – hapii Lab',
+    role: 'Undergraduate Researcher',
+    dates: 'June 2026 – Present',
+    location: 'Pomona, CA',
+    folder: {
+      label: 'hapii Lab',
+      color: 'sage',
+      peek: [
+        { type: 'doc', text: 'fixations.csv' },
+        { type: 'tag', text: 'WebGazer.js' },
+        { type: 'note', text: 'DBSCAN' },
+      ],
+    },
+    technologies: ['WebGazer.js', 'Laravel', 'MySQL', 'Python', 'DBSCAN'],
+    highlights: [
+      'Developed a WebGazer.js eye-tracking platform (Laravel, MySQL, Python API) that captures webcam gaze data and converts it into Gazepoint Open Gaze–format fixations.',
+      'Analyzed gaze data using Python and DBSCAN clustering to generate heatmaps and assess webpage usability.',
     ],
   },
   {
     organization: 'Cadence Design Systems',
-    role: 'Machine Learning Engineer Fellow',
-    dates: 'Aug. 2025 – Dec. 2025',
+    role: 'Machine Learning Engineer Intern',
+    dates: 'August 2025 – December 2025',
     location: 'Remote',
-    summary: 'Built an interactive analytics dashboard that transformed unstructured review data and model outputs into product-level insights, and presented the system and findings to Cadence Design Systems stakeholders.',
+    folder: {
+      label: 'Cadence',
+      color: 'peach',
+      peek: [
+        { type: 'doc', text: 'reviews.csv' },
+        { type: 'tag', text: 'BERT' },
+        { type: 'note', text: '87% acc.' },
+      ],
+    },
+    technologies: ['Python', 'Pandas', 'NLTK', 'Hugging Face', 'BERT', 'PyABSA'],
     highlights: [
-      'Cleaned and preprocessed 48M+ Amazon product reviews using Python, Pandas, and NLTK, building a text-processing pipeline for large-scale NLP model training.',
-      'Fine-tuned BERT-Base Uncased using Hugging Face Transformers for multi-class sentiment analysis, achieving 87% accuracy across positive, neutral, and negative classifications.',
-      'Developed an aspect-based sentiment analysis pipeline using PyABSA to extract product features and analyze feature-level sentiment across 51K reviews, identifying customer pain points and product features to preserve or redesign.',
+      'Built Python data preprocessing pipelines using Pandas and NLTK to clean and transform 48M+ Amazon reviews for downstream machine learning workflows.',
+      'Fine-tuned and evaluated BERT using Hugging Face Transformers, achieving 87% accuracy in multi-class sentiment classification.',
+      'Developed an aspect-based sentiment analysis pipeline using PyABSA to extract and analyze feature-level sentiment across 51K product reviews.',
     ],
   },
   {
     organization: 'California State Polytechnic University, Pomona',
-    role: 'Research Assistant',
-    dates: 'Spring 2025',
+    role: 'Undergraduate Research Assistant',
+    dates: 'February 2025 – May 2025',
     location: 'Pomona, CA',
-    summary: 'Supported deep-learning research for histopathological cancer image classification and survival analysis with a faculty researcher.',
+    folder: {
+      label: 'Research',
+      color: 'butter',
+      peek: [
+        { type: 'doc', text: 'Slide-Omics' },
+        { type: 'tag', text: 'Python' },
+        { type: 'note', text: 'symposium ✦' },
+      ],
+    },
+    technologies: ['Python', 'Multi-omics', 'Survival analysis'],
     highlights: [
-      'Preprocessed and analyzed 1,385 whole-slide histopathological images across three cancer cohorts—TCGA-LUAD, TCGA-LIHC, and TCGA-LGG—using Python, NumPy, and Pandas.',
-      'Integrated three multi-omics layers representing 9,405 genes into pathway-image representations and collaborated on deep learning models for cancer survival analysis.',
-      'Evaluated HipoMap and pathway-image representations using concordance index, achieving a best validation C-index of 0.57 and a best test C-index of 0.56.',
+      'Co-authored Slide-Omics, a multi-omics cancer survival prediction framework presented at CPP’s 18th Annual Science Research Symposium.',
     ],
   },
 ]

@@ -6,11 +6,12 @@ import Navigation from './components/Navigation'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { experiences, navigation, photos, profile, projects, skillGroups } from './data/portfolio'
-import YongBot from './components/YongBot/YongBot';
+import YongBot from './components/YongBot/YongBot'
+import { YongBotProvider } from './components/YongBot/YongBotContext'
 
 export default function App() {
   return (
-    <>
+    <YongBotProvider>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Navigation items={navigation} resumeHref={profile.resume} />
       <Hero profile={profile} />
@@ -22,6 +23,6 @@ export default function App() {
       </main>
       <Contact profile={profile} />
       <YongBot />
-    </>
+    </YongBotProvider>
   )
 }

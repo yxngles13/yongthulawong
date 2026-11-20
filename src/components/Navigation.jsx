@@ -6,7 +6,6 @@ export default function Navigation({ items, resumeHref }) {
   return (
     <nav className="site-nav" aria-label="Primary navigation">
       <div className="nav-shell">
-        <a className="nav-mark" href="#home" aria-label="Yong’s portfolio home">Y.</a>
         <button
           className="nav-toggle"
           type="button"

@@ -215,7 +215,6 @@ export default function Projects({ projects }) {
     <section className="section projects" id="work" aria-labelledby="projects-heading">
       <div className="section-heading-row">
         <div>
-          <div className="section-label">03 · things i’ve made</div>
           <h2 id="projects-heading">Selected Work</h2>
         </div>
         <p>Projects at the intersection of full-stack engineering, data, and thoughtful product design.</p>
@@ -247,10 +246,7 @@ export default function Projects({ projects }) {
                     zIndex: 100 - Math.round(distance * 10),
                   }}
                 >
-                  <div className="window-bar">
-                    <span className="window-close" aria-hidden="true">✕</span>
-                    <h3>{project.name}</h3>
-                  </div>
+                  <h3 className="sr-only">{project.name}</h3>
                   <button
                     className="window-art"
                     type="button"
@@ -264,7 +260,6 @@ export default function Projects({ projects }) {
                     onPointerLeave={() => setBubbleVisible(false)}
                   >
                     <ProjectArt art={project.art} />
-                    <span className="window-label">{project.dates}</span>
                   </button>
                 </article>
               )

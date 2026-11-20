@@ -18,7 +18,8 @@ describe('portfolio data', () => {
 
   it('includes every résumé experience and featured project', () => {
     expect(experiences.map((item) => item.organization)).toEqual([
-      'California State University, Office of Chancellor',
+      'California State University, Office of the Chancellor',
+      'California State Polytechnic University, Pomona – hapii Lab',
       'Cadence Design Systems',
       'California State Polytechnic University, Pomona',
     ])
